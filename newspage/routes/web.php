@@ -1,5 +1,6 @@
 <?php
 
+    use App\Http\Controllers\HomeController;
     use Illuminate\Support\Facades\Auth;
     use Illuminate\Support\Facades\Route;
 
@@ -30,6 +31,6 @@ Route::get('/login', function () {
     redirect(\route('login'));
 });
 
-Route::get('/loged-in', [\App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/loged-in', [HomeController::class, 'index']);
 
 Auth::routes();
