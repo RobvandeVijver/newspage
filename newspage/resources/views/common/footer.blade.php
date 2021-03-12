@@ -3,35 +3,54 @@
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-4">
                 <div class="footer_widget wow fadeInLeftBig">
-                    <h2>login</h2>
+                    @guest
+                        <h2>Inloggen</h2>
+                    @endguest
+                    @auth
+                        <h2>Uitloggen</h2>
+                    @endauth
                     <ul class="tag_nav">
-                        <li><a href="/login">Login here!</a></li>
-                        <li><a href="/register">Register here!</a></li>
+                        @guest
+                            <li><a href="/login">Login hier!</a></li>
+                            <li><a href="/register">Registreer hier!</a></li>
+                        @endguest
+                        @auth
+                            <li class="nav-item dropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    {{ __('uitloggen') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </li>
+                        @endauth
                     </ul>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4">
                 <div class="footer_widget wow fadeInDown">
-                    <h2>Tag</h2>
+                    <h2>Specifiek nieuws:</h2>
                     <ul class="tag_nav">
-                        <li><a href="#">Games</a></li>
-                        <li><a href="#">Sports</a></li>
-                        <li><a href="#">Fashion</a></li>
-                        <li><a href="#">Business</a></li>
-                        <li><a href="#">Life &amp; Style</a></li>
-                        <li><a href="#">Technology</a></li>
-                        <li><a href="#">Photo</a></li>
-                        <li><a href="#">Slider</a></li>
+                        <li><a href="#">Binnenland</a></li>
+                        <li><a href="#">Economie</a></li>
+                        <li><a href="#">Sport</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4">
                 <div class="footer_widget wow fadeInRightBig">
-                    <h2>Contact</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    <address>
-                        Perfect News,1238 S . 123 St.Suite 25 Town City 3333,USA Phone: 123-326-789 Fax: 123-546-567
-                    </address>
+                    <a href=""></a><h2>Contact</h2>
+                    <p>
+                        <ul>
+                            <li>Redactie Diquet</li>
+                            <li>Postbus 146, 4530AC Terneuzen</li>
+                            <li>E-mail: redactie@diquet.com</li>
+                            <li>Tel. 0617346981</li>
+                        </ul>
+                    </p>
                 </div>
             </div>
         </div>

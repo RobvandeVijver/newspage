@@ -31,6 +31,6 @@ Route::get('/login', function () {
     redirect(\route('login'));
 });
 
-Route::get('/loged-in', [HomeController::class, 'index']);
+Route::post('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Auth::routes();

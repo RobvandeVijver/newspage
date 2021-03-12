@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>NewsFeed</title>
+    <title>DIQUET</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -38,9 +38,27 @@
                                 </a>
                             </li>
                             <li>
+                                <a href="/binnenland"
+                                   class="navbar-item {{ Request::path() === '/binnenland' ? "is-active" : "" }}">
+                                    Binnenland
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/economie"
+                                   class="navbar-item {{ Request::path() === '/economie' ? "is-active" : "" }}">
+                                    Economie
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/sport"
+                                   class="navbar-item {{ Request::path() === '/sport' ? "is-active" : "" }}">
+                                    Sport
+                                </a>
+                            </li>
+                            <li>
                                 <a href="/about"
                                    class="navbar-item {{ Request::path() === '/about' ? "is-active" : "" }}">
-                                    About
+                                    Over ons
                                 </a>
                             </li>
                             <li>
@@ -49,57 +67,48 @@
                                     Contact
                                 </a>
                             </li>
-                            <li>
-                                <a href="/login"
-                                   class="navbar-item {{ Request::path() === '/login' ? "is-active" : "" }}">
-                                    Login
-                                </a>
-                            </li>
                         </ul>
                     </div>
                     <div class="header_top_right">
-                        <p>Laatst bijgewerkt: {{ date('Y-m-d') }}</p>
+                        <ul class="top_nav">
+                            @guest
+                                <li>
+                                    <a href="/login"
+                                       class="navbar-item {{ Request::path() === '/login' ? "is-active" : "" }}">
+                                        Inloggen
+                                    </a>
+                                </li>
+                            @endguest
+                            @auth
+                                <li class="nav-item dropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                             document.getElementById('logout-form').submit();">
+                                        {{ __('uitloggen') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </li>
+                            @endauth
+                        </ul>
+
                     </div>
                 </div>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="header_bottom">
-                    <div class="logo_area"><a href="/" class="logo"><img src="images/logo.jpg" alt=""></a></div>
+                    <div class="logo_area"><a href="/" class="logo"><img src="images/Diquet Logo.jpg" alt=""></a></div>
                     <div class="add_banner"><a href="/"><img src="images/addbanner_728x90_V1.jpg" alt=""></a></div>
                 </div>
             </div>
         </div>
     </header>
-    <section id="navArea">
-        <nav class="navbar navbar-inverse" role="navigation">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav main_nav">
-                    <li class="active"><a href="/"><span class="fa fa-home desktop-home"></span><span class="mobile-show">Home</span></a></li>
-                    <li><a href="#">Technology</a></li>
-                    <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Mobile</a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Android</a></li>
-                            <li><a href="#">Samsung</a></li>
-                            <li><a href="#">Nokia</a></li>
-                            <li><a href="#">Walton Mobile</a></li>
-                            <li><a href="#">Sympony</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Laptops</a></li>
-                    <li><a href="#">Tablets</a></li>
-                    <li><a href="pages/contact.html">Contact Us</a></li>
-                    <li><a href="pages/404.html">404 Page</a></li>
-                </ul>
-            </div>
-        </nav>
-    </section>
 
-    @yield('content');
+    @yield('content')
 
-    @include('common.footer');
+    @include('common.footer')
 
 </div>
 <script src="assets/js/jquery.min.js"></script>
