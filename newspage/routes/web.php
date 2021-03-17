@@ -1,6 +1,6 @@
 <?php
 
-    use App\Http\Controllers\HomeController;
+    use App\Http\Controllers\SendEmailController;
     use Illuminate\Support\Facades\Auth;
     use Illuminate\Support\Facades\Route;
 
@@ -15,6 +15,8 @@
 |
 */
 
+Route::resource('/binnenland', \App\Http\Controllers\BinnenlandController::class);
+
 Route::get('/', function () {
     return view('home.welcome');
 });
@@ -23,9 +25,9 @@ Route::get('/about', function () {
     return view('home.about');
 });
 
-Route::get('/contact', function () {
-    return view('home.contact');
-});
+
+Route::get('/contact', '\App\Http\Controllers\SendEmailController@index');
+Route::post('/contact/send', '\App\Http\Controllers\SendEmailController@send')->name('contact.send');
 
 Route::get('/login', function () {
     redirect(\route('login'));
@@ -34,3 +36,4 @@ Route::get('/login', function () {
 Route::post('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Auth::routes();
+

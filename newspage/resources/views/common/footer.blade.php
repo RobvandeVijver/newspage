@@ -34,9 +34,9 @@
                 <div class="footer_widget wow fadeInDown">
                     <h2>Specifiek nieuws:</h2>
                     <ul class="tag_nav">
-                        <li><a href="#">Binnenland</a></li>
-                        <li><a href="#">Economie</a></li>
-                        <li><a href="#">Sport</a></li>
+                        <li><a href="/binnenland">Binnenland</a></li>
+                        <li><a href="/economie">Economie</a></li>
+                        <li><a href="/sport">Sport</a></li>
                     </ul>
                 </div>
             </div>
@@ -56,6 +56,6 @@
         </div>
     </div>
     <div class="footer_bottom">
-        <p class="copyright">Copyright &copy; 2021 <a href="/">NewsFeed</a></p>
+        <p class="copyright">Copyright &copy; 2021 <a href="/">DIQUET</a></p>
     </div>
 </footer>
