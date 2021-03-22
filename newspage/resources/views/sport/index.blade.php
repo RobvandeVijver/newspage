@@ -6,14 +6,14 @@
         <div class="col-lg-16 col-md-16 col-sm-16">
             <div class="left_content">
                 <div class="single_post_content">
-                    <h2><span>Binnenland</span></h2>
+                    <h2><span>Sport</span></h2>
 
                     <div>
                         @if(session('status'))
                             <div class="message is-primary">
                                 <div class="message-header">
                                     {{session('status')}}
-                                    <form action="{{ route('binnenland.index') }}">
+                                    <form action="{{ route('sport.index') }}">
                                         <button type="submit">OK</button>
                                     </form>
                                 </div>
@@ -23,21 +23,21 @@
 
                     @auth
                     <br>
-                    <form action="{{ route('binnenland.create') }}">
-                        <button type="submit">Maak binnenland artikel aan</button>
+                    <form action="{{ route('sport.create') }}">
+                        <button type="submit">Maak sport artikel aan</button>
                     </form>
                     <br>
                     @endauth
-                    @foreach($binnenlands as $binnenland)
-                        <div class="media wow fadeInDown"> <a href="{{ route('binnenland.show', $binnenland) }}" class="featured_img"> <img alt="" src="{{ asset('/storage/binnenlands/'. $binnenland->image) }}" height="400"> </a>
+                    @foreach($sports as $sport)
+                        <div class="media wow fadeInDown"> <a href="{{ route('sport.show', $sport) }}" class="featured_img"> <img alt="" src="{{ asset('/storage/sports/'. $sport->image) }}" height="400"> </a>
                             <div>
-                                <a href="{{ route('binnenland.show', $binnenland) }}">
+                                <a href="{{ route('sport.show', $sport) }}">
                                     <div>
-                                        {{ $binnenland->title }} <br>
+                                        {{ $sport->title }} <br>
                                     </div>
                                 </a>
                                 <div>
-                                    {{ $binnenland->created_at }}
+                                    {{ $sport->created_at }}
                                     <br>
                                     <br>
                                     <br>

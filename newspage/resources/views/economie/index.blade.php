@@ -6,14 +6,14 @@
         <div class="col-lg-16 col-md-16 col-sm-16">
             <div class="left_content">
                 <div class="single_post_content">
-                    <h2><span>Binnenland</span></h2>
+                    <h2><span>Economie</span></h2>
 
                     <div>
                         @if(session('status'))
                             <div class="message is-primary">
                                 <div class="message-header">
                                     {{session('status')}}
-                                    <form action="{{ route('binnenland.index') }}">
+                                    <form action="{{ route('economie.index') }}">
                                         <button type="submit">OK</button>
                                     </form>
                                 </div>
@@ -23,21 +23,21 @@
 
                     @auth
                     <br>
-                    <form action="{{ route('binnenland.create') }}">
-                        <button type="submit">Maak binnenland artikel aan</button>
+                    <form action="{{ route('economie.create') }}">
+                        <button type="submit">Maak economie artikel aan</button>
                     </form>
                     <br>
                     @endauth
-                    @foreach($binnenlands as $binnenland)
-                        <div class="media wow fadeInDown"> <a href="{{ route('binnenland.show', $binnenland) }}" class="featured_img"> <img alt="" src="{{ asset('/storage/binnenlands/'. $binnenland->image) }}" height="400"> </a>
+                    @foreach($economies as $economie)
+                        <div class="media wow fadeInDown"> <a href="{{ route('economie.show', $economie) }}" class="featured_img"> <img alt="" src="{{ asset('/storage/economies/'. $economie->image) }}" height="400"> </a>
                             <div>
-                                <a href="{{ route('binnenland.show', $binnenland) }}">
+                                <a href="{{ route('economie.show', $economie) }}">
                                     <div>
-                                        {{ $binnenland->title }} <br>
+                                        {{ $economie->title }} <br>
                                     </div>
                                 </a>
                                 <div>
-                                    {{ $binnenland->created_at }}
+                                    {{ $economie->created_at }}
                                     <br>
                                     <br>
                                     <br>

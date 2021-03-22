@@ -49,14 +49,17 @@ class BinnenlandController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required',
-            'body' => 'required',
-            'writer' => 'required',
+            'title' => 'required | max:255',
+            'body' => 'required | max:255',
+            'writer' => 'required | max:255',
+            'image' => 'required'
         ],
         [
             'title.required' => 'U bent vergeten een titel toe te voegen!',
             'body.required' => 'U bent vergeten een alinea te schrijven!',
-            'writer.required' => 'U bent vergeten de schrijver toe te voegen!'
+            'writer.required' => 'U bent vergeten de schrijver toe te voegen!',
+            'image.required' => 'U bent vergeten een afbeelding toe te voegen!',
+            '.max' => 'U heeft meer dan 255 characters!'
         ]);
 
         if($request->hasFile('image')){
@@ -109,20 +112,21 @@ class BinnenlandController extends Controller
     public function update(Request $request, Binnenland $binnenland)
     {
         $request->validate([
-            'title' => 'required',
-            'body' => 'required',
-            'writer' => 'required',
+            'title' => 'required | max:255' ,
+            'body' => 'required | max:255',
+            'writer' => 'required | max:255',
         ],
         [
             'title.required' => 'U bent vergeten een titel toe te voegen!',
             'body.required' => 'U bent vergeten een alinea te schrijven!',
-            'writer.required' => 'U bent vergeten de schrijver toe te voegen!'
+            'writer.required' => 'U bent vergeten de schrijver toe te voegen!',
+            '.max' => 'U heeft meer dan 255 characters!'
         ]);
 
         $image = $request->has('file') ? time(). $request->file('image')->getClientOriginalName() : $binnenland->image;
 
         if ($request->has('image')){
-            Storage::delete('/storage/binnenlands/'. $binnenland->image);
+            Storage::delete('storage/binnenlands/'. $binnenland->image);
             unlink(public_path('storage/binnenlands/') . $binnenland->image);
 
             $request->image->storeAs('binnenlands', $image, 'public');

@@ -15,6 +15,10 @@ class CreateEconomiesTable extends Migration
     {
         Schema::create('economies', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->text('body');
+            $table->string('writer');
+            $table->mediumText('image')->nullable();
             $table->timestamps();
         });
     }

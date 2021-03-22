@@ -10,7 +10,7 @@
                         <br>
                         <div class="media wow fadeInDown">
                             <!-- Begin Edit form -->
-                            <form method="POST" action="{{ route('binnenland.update', $binnenland) }}" enctype="multipart/form-data">
+                            <form method="POST" action="{{ route('sport.update', $sport) }}" enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
 
@@ -20,7 +20,7 @@
                                     <div class="control">
                                         <input name="title" class="form-control @error('title') is-danger @enderror"
                                                type="text" placeholder="De titel hier..."
-                                               value="{{ old('title', $binnenland->title) }}" width="500"
+                                               value="{{ old('title', $sport->title) }}" width="500"
                                         >
                                     </div>
                                     @error('title')
@@ -32,7 +32,7 @@
                                     <label>Artikel</label>
                                     <div class="control">
                                         <textarea name="body" id="body" cols="30" rows="10" class="form-control @error('body')
-                                            is-danger @enderror" placeholder="Schrijf het artikel hier..." >{{ old('body', $binnenland->body) }}</textarea>
+                                            is-danger @enderror" placeholder="Schrijf het artikel hier..." >{{ old('body', $sport->body) }}</textarea>
 
                                     </div>
                                     @error('body')
@@ -45,7 +45,7 @@
                                     <div class="control">
                                         <input name="writer" class="form-control @error('writer') is-danger @enderror"
                                                type="text" placeholder="Uw naam hier..."
-                                               value="{{ old('writer', $binnenland->writer) }}"
+                                               value="{{ old('writer', $sport->writer) }}"
                                         >
                                     </div>
                                     @error('writer')
@@ -55,8 +55,8 @@
                                 <br>
                                 <div>
                                     <p>Huidige afbeelding:</p>
-                                    @if($binnenland->image)
-                                        <img src="{{asset('/storage/binnenlands/'. $binnenland->image)}}" alt="" height="200">
+                                    @if($sport->image)
+                                        <img src="{{asset('/storage/sports/'. $sport->image)}}" alt="" height="200">
                                     @else
                                         <br>
                                         <p>Geen huidige afbeelding voor dit artikel</p>
@@ -76,14 +76,14 @@
                                 </div>
                             </form>
                                 <div class="row">
-                                    <form action="{{ route('binnenland.show', $binnenland) }}" >
+                                    <form action="{{ route('sport.show', $sport) }}" >
                                         <button type="submit">Ga terug</button>
                                         <br>
                                         <br>
                                     </form>
                                 </div>
                                 <div class="row">
-                                    <form action="{{ route('binnenland.destroy', $binnenland) }}" method="POST">
+                                    <form action="{{ route('sport.destroy', $sport) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
 

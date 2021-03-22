@@ -6,11 +6,11 @@
             <div class="left_content">
                 <div class="single_post_content">
                     @auth
-                        <h2><span>Maak &nbsp binnenland &nbsp artikel &nbsp aan</span></h2>
+                        <h2><span>Maak &nbsp sport &nbsp artikel &nbsp aan</span></h2>
                         <br>
                         <div class="media wow fadeInDown">
                             <!-- Begin Edit form -->
-                            <form method="POST" action="{{ route('binnenland.store') }}" enctype="multipart/form-data">
+                            <form method="POST" action="{{ route('sport.store') }}" enctype="multipart/form-data">
                                 @csrf
 
                                 <br>
