@@ -38,9 +38,9 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="/danny"
-                                   class="navbar-item {{ Request::path() === '/danny' ? "is-active" : "" }}">
-                                    Danny
+                                <a href="/binnenland"
+                                   class="navbar-item {{ Request::path() === '/binnenland' ? "is-active" : "" }}">
+                                    Binnenland
                                 </a>
                             </li>
                             <li>

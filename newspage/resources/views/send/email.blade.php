@@ -3,7 +3,7 @@
 @section('content')
     <section id="sliderSection">
         <div class="fashion_technology_area">
-            <div class="fashion">
+            <div class="">
                 <div class="single_post_content">
                     <h2><span>Hier kunt u ons direct mailen:</span></h2>
                     <!-- begin form -->
@@ -63,10 +63,15 @@
                             <div class="form-group">
                                 <input type="submit" name="send" class="btn btn-info" value="Send" />
                             </div>
+
                         </form>
 
                     </div>
                     <!-- end form -->
+                    <br>
+                    <br>
+                    <br>
+                    <br>
                 </div>
             </div>
         </div>

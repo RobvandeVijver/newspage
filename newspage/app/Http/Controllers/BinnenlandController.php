@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Binnenland;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class BinnenlandController extends Controller
 {
@@ -47,11 +48,22 @@ class BinnenlandController extends Controller
      */
     public function store(Request $request)
     {
-        $image = null;
+        $request->validate([
+            'title' => 'required',
+            'body' => 'required',
+            'writer' => 'required',
+        ],
+        [
+            'title.required' => 'U bent vergeten een titel toe te voegen!',
+            'body.required' => 'U bent vergeten een alinea te schrijven!',
+            'writer.required' => 'U bent vergeten de schrijver toe te voegen!'
+        ]);
 
         if($request->hasFile('image')){
-            $image = $request->file('image')->getClientOriginalExtension();
+            $image = time(). $request->file('image')->getClientOriginalName();
             $request->image->storeAs('binnenlands', $image, 'public');
+        } else {
+            $image = null;
         }
 
         $binnenland = new Binnenland();
@@ -59,11 +71,13 @@ class BinnenlandController extends Controller
         $binnenland->title = $request->input('title');
         $binnenland->body = $request->input('body');
         $binnenland->writer = $request->input('writer');
+
         $binnenland->image = $image;
         $binnenland->save();
 
         return redirect(route('binnenland.index'))->with('status', 'Artikel succesvol aangemaakt');
     }
+
 
 
     /**
@@ -91,22 +105,52 @@ class BinnenlandController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Binnenland  $binnenland
-     * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Binnenland $binnenland)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'body' => 'required',
+            'writer' => 'required',
+        ],
+        [
+            'title.required' => 'U bent vergeten een titel toe te voegen!',
+            'body.required' => 'U bent vergeten een alinea te schrijven!',
+            'writer.required' => 'U bent vergeten de schrijver toe te voegen!'
+        ]);
+
+        $image = $request->has('file') ? time(). $request->file('image')->getClientOriginalName() : $binnenland->image;
+
+        if ($request->has('image')){
+            Storage::delete('/storage/binnenlands/'. $binnenland->image);
+            unlink(public_path('storage/binnenlands/') . $binnenland->image);
+
+            $request->image->storeAs('binnenlands', $image, 'public');
+        }
+
+        $binnenland->update([
+           'title' => $request->title,
+            'body' => $request->body,
+            'writer' => $request->writer,
+            'image' => $image,
+        ]);
+
+        return redirect(route('binnenland.index'))->with('status', $binnenland->title. ' is bijgewerkt');
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Binnenland  $binnenland
-     * @return \Illuminate\Http\Response
      */
     public function destroy(Binnenland $binnenland)
     {
-        //
+        unlink(public_path('storage/binnenlands/') . $binnenland->image);
+
+        $binnenland->delete();
+
+        return redirect(route('binnenland.index'))->with('status', 'Artikel succesvol verwijderd');
     }
 
 }
