@@ -21,9 +21,7 @@ Route::resource('/economie', \App\Http\Controllers\EconomieController::class);
 
 Route::resource('/sport', \App\Http\Controllers\SportController::class);
 
-Route::get('/', function () {
-    return view('home.welcome');
-});
+Route::get('/', [\App\Http\Controllers\HomeController::class, 'index']);
 
 Route::get('/about', function () {
     return view('home.about');

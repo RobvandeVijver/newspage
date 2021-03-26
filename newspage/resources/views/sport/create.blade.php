@@ -57,12 +57,15 @@
                                         <label class="custom-file-label">Upload afbeelding</label>
                                         <input name="image" id="image" type="file" class="custom-file-input">
                                     </div>
+                                    @error('image')
+                                    <p class="alert alert-danger">{{ $message }}</p>
+                                    @enderror
                                 </div>
                                 <br>
                                 <div class="row">
                                     <br>
                                     <br>
-                                    <button type="submit">Artikel opslaan</button>
+                                    <button class="btn" type="submit">Artikel opslaan</button>
                                     <br>
                                     <br>
                                 </div>

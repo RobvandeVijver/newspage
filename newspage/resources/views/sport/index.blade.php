@@ -24,7 +24,7 @@
                     @auth
                     <br>
                     <form action="{{ route('sport.create') }}">
-                        <button type="submit">Maak sport artikel aan</button>
+                        <button class="btn" type="submit">Maak sport artikel aan</button>
                     </form>
                     <br>
                     @endauth

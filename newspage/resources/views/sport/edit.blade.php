@@ -71,13 +71,13 @@
                                 </div>
                                 <br>
                                 <div class="row">
-                                    <button type="submit">Opslaan</button>
+                                    <button class="btn" type="submit">Opslaan</button>
                                     <br><br>
                                 </div>
                             </form>
                                 <div class="row">
                                     <form action="{{ route('sport.show', $sport) }}" >
-                                        <button type="submit">Ga terug</button>
+                                        <button class="btn" type="submit">Ga terug</button>
                                         <br>
                                         <br>
                                     </form>
@@ -87,7 +87,7 @@
                                         @csrf
                                         @method('DELETE')
 
-                                        <button type="submit">Verwijder artikel</button>
+                                        <button class="btn" type="submit">Verwijder artikel</button>
                                         <br>
                                         <br>
                                     </form>

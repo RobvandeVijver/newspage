@@ -10,11 +10,11 @@
                         @auth
                             <br>
                             <form action="{{ route('binnenland.edit', $binnenland) }} " class="media wow fadeInDown">
-                                <button type="submit">Bewerk deze pagina</button>
+                                <button class="btn" type="submit">Bewerk deze pagina</button>
                             </form>
                             <br>
                         @endauth
-                        <div class="media wow fadeInDown"><img alt="" src="{{ asset('/storage/binnenlands/'. $binnenland->image) }}" height="400">
+                        <div class="media wow fadeInDown"><img alt="" src="{{ asset('/storage/binnenlands/'. $binnenland->image) }}" height="600">
                             <div>
                                 <br>
                                 <br>

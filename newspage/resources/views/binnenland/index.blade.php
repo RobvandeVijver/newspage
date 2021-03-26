@@ -14,7 +14,7 @@
                                 <div class="message-header">
                                     {{session('status')}}
                                     <form action="{{ route('binnenland.index') }}">
-                                        <button type="submit">OK</button>
+                                        <button class="btn" type="submit">OK</button>
                                     </form>
                                 </div>
                             </div>
@@ -24,7 +24,7 @@
                     @auth
                     <br>
                     <form action="{{ route('binnenland.create') }}">
-                        <button type="submit">Maak binnenland artikel aan</button>
+                        <button class="btn" type="submit">Maak binnenland artikel aan</button>
                     </form>
                     <br>
                     @endauth
