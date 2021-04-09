@@ -49,22 +49,25 @@
                             @foreach($sorted as $post)
                                 @if($post instanceof \App\Models\Binnenland)
                                 <li>
-                                    <div class="media"> <a href="{{ route('binnenland.show', $post) }}" class="media-left"> <img alt="" src="{{ asset('/storage/binnenlands/'. $post->image) }}" width="70" height="70"> </a>
+                                    <div class="media"> <a href="{{ route('binnenland.show', $post) }}" class="media-left"></a>
                                         <div class="media-body"> <a href="{{ route('binnenland.show', $post) }}" class="catg_title">{{ $post->title }}</a> </div>
+                                        <br>
                                     </div>
                                 </li>
                                 @endif
                                 @if($post instanceof \App\Models\Sport)
                                     <li>
-                                        <div class="media"> <a href="{{ route('sport.show', $post) }}" class="media-left"> <img alt="" src="{{ asset('/storage/sports/'. $post->image) }}" width="70" height="70"> </a>
+                                        <div class="media"> <a href="{{ route('sport.show', $post) }}" class="media-left"> </a>
                                             <div class="media-body"> <a href="{{ route('sport.show', $post) }}" class="catg_title">{{ $post->title }}</a> </div>
+                                            <br>
                                         </div>
                                     </li>
                                 @endif
                                 @if($post instanceof \App\Models\Economie)
                                     <li>
-                                        <div class="media"> <a href="{{ route('economie.show', $post) }}" class="media-left"> <img alt="" src="{{ asset('/storage/economies/'. $post->image) }}" width="70" height="70"> </a>
+                                        <div class="media"> <a href="{{ route('economie.show', $post) }}" class="media-left"> </a>
                                             <div class="media-body"> <a href="{{ route('economie.show', $post) }}" class="catg_title">{{ $post->title }}</a> </div>
+                                            <br>
                                         </div>
                                     </li>
                                 @endif

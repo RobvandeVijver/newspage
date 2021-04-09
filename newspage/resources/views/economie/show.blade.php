@@ -14,7 +14,7 @@
                             </form>
                             <br>
                         @endauth
-                        <div class="media wow fadeInDown"><img alt="" src="{{ asset('/storage/economies/'. $economie->image) }}" height="600">
+                        <div class="media wow fadeInDown"><img alt="" src="{{ asset('/storage/economies/'. $economie->image) }}" height="950">
                             <div>
                                 <br>
                                 <br>

@@ -1,5 +1,6 @@
 <?php
 
+    use App\Http\Controllers\BinnenlandController;
     use App\Http\Controllers\SendEmailController;
     use Illuminate\Support\Facades\Auth;
     use Illuminate\Support\Facades\Route;
@@ -15,7 +16,7 @@
 |
 */
 
-Route::resource('/binnenland', \App\Http\Controllers\BinnenlandController::class);
+Route::resource('/binnenland', BinnenlandController::class);
 
 Route::resource('/economie', \App\Http\Controllers\EconomieController::class);
 

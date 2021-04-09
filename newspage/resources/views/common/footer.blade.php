@@ -12,7 +12,6 @@
                     <ul class="tag_nav">
                         @guest
                             <li><a href="/login">Login hier!</a></li>
-                            <li><a href="/register">Registreer hier!</a></li>
                         @endguest
                         @auth
                             <li class="nav-item dropdown">
@@ -32,7 +31,7 @@
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4">
                 <div class="footer_widget wow fadeInDown">
-                    <h2>Specifiek nieuws:</h2>
+                    <h2>Specifiek nieuws</h2>
                     <ul class="tag_nav">
                         <li><a href="/binnenland">Binnenland</a></li>
                         <li><a href="/economie">Economie</a></li>
