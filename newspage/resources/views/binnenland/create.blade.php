@@ -55,7 +55,7 @@
                                 <div class="input-group">
                                     <div class="custom-file">
                                         <label class="custom-file-label">Upload afbeelding</label>
-                                        <input name="image" id="image" type="file" class="custom-file-input">
+                                        <b
                                     </div>
                                     @error('image')
                                     <p class="alert alert-danger">{{ $message }}</p>
