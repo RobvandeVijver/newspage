@@ -59,7 +59,9 @@ class BinnenlandController extends Controller
             'body.required' => 'U bent vergeten een alinea te schrijven!',
             'writer.required' => 'U bent vergeten de schrijver toe te voegen!',
             'image.required' => 'U bent vergeten een afbeelding toe te voegen!',
-            '.max' => 'U heeft meer dan 255 characters!'
+            'title.max' => 'U heeft meer dan 255 characters!',
+            'body.max' => 'U heeft meer dan 255 characters!',
+            'writer.max' => 'U heeft meer dan 255 characters!',
         ]);
 
         if($request->hasFile('image')){

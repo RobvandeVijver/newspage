@@ -29,7 +29,7 @@ Route::get('/about', function () {
 });
 
 
-Route::get('/contact', '\App\Http\Controllers\SendEmailController@index');
+Route::get('/contact', '\App\Http\Controllers\SendEmailController@index')->middleware('auth');
 Route::post('/contact/send', '\App\Http\Controllers\SendEmailController@send')->name('contact.send');
 
 Route::get('/login', function () {

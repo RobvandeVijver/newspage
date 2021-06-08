@@ -33,7 +33,7 @@
                             <div>
                                 <a href="{{ route('sport.show', $sport) }}">
                                     <div>
-                                        {{ $sport->title }} <br>
+                                        {{ $sports->title }} <br>
                                     </div>
                                 </a>
                                 <div>
