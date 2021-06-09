@@ -70,7 +70,7 @@
                             <li>
                                 <a href="/HALLO"
                                    class="navbar-item {{ Request::path() === '/HALLO' ? "is-active" : "" }}">
-                                    Contact
+                                    Hallo
                                 </a>
                             </li>
                         </ul>
