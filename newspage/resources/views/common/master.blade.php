@@ -67,6 +67,12 @@
                                     Contact
                                 </a>
                             </li>
+                            <li>
+                                <a href="/HALLO"
+                                   class="navbar-item {{ Request::path() === '/HALLO' ? "is-active" : "" }}">
+                                    Contact
+                                </a>
+                            </li>
                         </ul>
                     </div>
                     <div class="header_top_right">
