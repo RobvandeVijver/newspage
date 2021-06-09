@@ -68,9 +68,9 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="/HALLO"
+                                <a href="/TEST"
                                    class="navbar-item {{ Request::path() === '/HALLO' ? "is-active" : "" }}">
-                                    Hallo
+                                    Test
                                 </a>
                             </li>
                         </ul>
