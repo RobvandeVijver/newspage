@@ -40,3 +40,4 @@ Route::post('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Auth::routes();
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
