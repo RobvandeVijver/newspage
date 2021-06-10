@@ -68,11 +68,12 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="/TEST"
-                                   class="navbar-item {{ Request::path() === '/HALLO' ? "is-active" : "" }}">
-                                    Test
+                                <a href="/DevOps4"
+                                   class="navbar-item {{ Request::path() === '/DevOps4' ? "is-active" : "" }}">
+                                    DevOps4
                                 </a>
                             </li>
+
                         </ul>
                     </div>
                     <div class="header_top_right">
