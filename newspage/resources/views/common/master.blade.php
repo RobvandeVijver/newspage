@@ -68,9 +68,9 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="/DevOps4"
-                                   class="navbar-item {{ Request::path() === '/DevOps4' ? "is-active" : "" }}">
-                                    DevOps4
+                                <a href="/Docent"
+                                   class="navbar-item {{ Request::path() === '/Docent' ? "is-active" : "" }}">
+                                    Docent
                                 </a>
                             </li>
 
