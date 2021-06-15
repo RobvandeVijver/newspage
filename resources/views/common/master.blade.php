@@ -68,9 +68,9 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="/10-Punten"
-                                   class="navbar-item {{ Request::path() === '/10-Punten' ? "is-active" : "" }}">
-                                    tests
+                                <a href="/LoekLegend"
+                                   class="navbar-item {{ Request::path() === '/LoekLegend' ? "is-active" : "" }}">
+                                    LoekLegend
                                 </a>
                             </li>
 
