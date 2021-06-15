@@ -68,9 +68,9 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="/Docent"
-                                   class="navbar-item {{ Request::path() === '/Docent' ? "is-active" : "" }}">
-                                    Docent
+                                <a href="/yeay"
+                                   class="navbar-item {{ Request::path() === '/DOCENTEN' ? "is-active" : "" }}">
+                                    DOCENTEN
                                 </a>
                             </li>
 
