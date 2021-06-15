@@ -70,7 +70,7 @@
                             <li>
                                 <a href="/10-Punten"
                                    class="navbar-item {{ Request::path() === '/10-Punten' ? "is-active" : "" }}">
-                                    10-Punten
+                                    tests
                                 </a>
                             </li>
 
