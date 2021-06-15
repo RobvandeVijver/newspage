@@ -68,9 +68,9 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="/yeay"
-                                   class="navbar-item {{ Request::path() === '/DOCENTEN' ? "is-active" : "" }}">
-                                    DOCENTEN
+                                <a href="/10-Punten"
+                                   class="navbar-item {{ Request::path() === '/10-Punten' ? "is-active" : "" }}">
+                                    10-Punten
                                 </a>
                             </li>
 
