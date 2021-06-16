@@ -3,6 +3,7 @@
     use App\Http\Controllers\BinnenlandController;
     use App\Http\Controllers\SendEmailController;
     use Illuminate\Support\Facades\Auth;
+    use Illuminate\Support\Facades\Mail;
     use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,3 +42,15 @@ Route::post('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('send-mail', function () {
+
+    $details = [
+        'title' => 'Mail from ItSolutionStuff.com',
+        'body' => 'This is for testing email using smtp'
+    ];
+
+    Mail::to('your_receiver_email@gmail.com')->send(new \App\Mail\MyTestMail($details));
+
+    dd("Email is Sent.");
+});
