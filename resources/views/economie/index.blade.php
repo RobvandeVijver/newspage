@@ -33,7 +33,7 @@
                             <div>
                                 <a href="{{ route('economie.show', $economie) }}">
                                     <div>
-                                        {{ $economies->title }} <br>
+                                        {{ $economie->title }} <br>
                                     </div>
                                 </a>
                                 <div>
