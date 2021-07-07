@@ -13,11 +13,19 @@
                             <form method="POST" action="{{ route('binnenland.store') }}" enctype="multipart/form-data">
                                 @csrf
 
-                                <br>
                                 <div class="field">
-                                    <label>Titel</label>
+                                    <label>Uitleg</label>
+                                    <div>
+                                        <p>Als er een * achter het kopje staat betekend dit dat dit veld verplicht is in te vullen.</p>
+                                        <br>
+                                        <p>De velden mogen maximaal 255 characters bevatten.</p>
+                                    </div>
+                                    <br>
+                                </div>
+                                <div class="field">
+                                    <label>Titel *</label>
                                     <div class="control">
-                                        <input name="title" class="form-control @error('title') is-danger @enderror"
+                                        <input required name="title" class="form-control @error('title') is-danger @enderror"
                                                type="text" placeholder="De titel hier..."
                                                value="{{ old('title') }}" width="500"
                                         >
@@ -28,9 +36,9 @@
                                 </div>
                                 <br>
                                 <div class="field">
-                                    <label>Artikel</label>
+                                    <label>Artikel *</label>
                                     <div class="control">
-                                        <textarea name="body" id="body" cols="30" rows="10" class="form-control @error('body')
+                                        <textarea required name="body" id="body" cols="30" rows="10" class="form-control @error('body')
                                             is-danger @enderror" placeholder="Schrijf het artikel hier..." >{{ old('body') }}</textarea>
 
                                     </div>
@@ -40,9 +48,9 @@
                                 </div>
                                 <br>
                                 <div class="field">
-                                    <label>Schrijver naam</label>
+                                    <label>Schrijver naam *</label>
                                     <div class="control">
-                                        <input name="writer" class="form-control @error('writer') is-danger @enderror"
+                                        <input required name="writer" class="form-control @error('writer') is-danger @enderror"
                                                type="text" placeholder="Uw naam hier..."
                                                value="{{ old('writer') }}"
                                         >
@@ -54,8 +62,8 @@
                                 <br>
                                 <div class="input-group">
                                     <div class="custom-file">
-                                        <label class="custom-file-label">Upload afbeelding</label>
-                                        <input name="image" id="image" type="file" class="custom-file-input">
+                                        <label class="custom-file-label">Upload afbeelding *</label>
+                                        <input required name="image" id="image" type="file" class="custom-file-input">
                                     </div>
                                     @error('image')
                                     <p class="alert alert-danger">{{ $message }}</p>
