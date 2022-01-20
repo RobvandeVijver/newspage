@@ -8,6 +8,13 @@
             </div>
         </nav>
     </section>
+    <section>
+        <div>
+            <div>
+                <h1>Pipeline Heroku Portfolio</h1>
+            </div>
+        </div>
+    </section>
     <section id="sliderSection">
         <div class="row">
             <div class="col-lg-8 col-md-8 col-sm-8">
