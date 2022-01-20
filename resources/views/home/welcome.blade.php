@@ -11,7 +11,7 @@
     <section>
         <div>
             <div>
-                <h1>Pipeline Heroku Portfolio</h1>
+                <h1>Pipeline Heroku Portfolio Rob van de Vijver</h1>
             </div>
         </div>
     </section>
